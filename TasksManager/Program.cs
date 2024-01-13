@@ -23,10 +23,6 @@ builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuth
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddScoped<TasksBLL>();
 
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy("RequireLogin", policy => policy.RequireAuthenticatedUser());
-});
 
 
 var app = builder.Build();
